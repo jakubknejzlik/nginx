@@ -170,8 +170,7 @@ _EOF_
 
   if [ -n "${NGINX_PROXY_PASS}" ]; then
     cat >> $configFileReverseProxy/reverseProxy.conf <<_EOF_
-          set ${REVERSE_PROXY_BACKEND_VARIABLE} "${NGINX_PROXY_PASS}";
-          proxy_pass ${REVERSE_PROXY_BACKEND};
+          proxy_pass ${NGINX_PROXY_PASS};
 _EOF_
     setApplicationHeaders $NGINX_PROXY_APPLICATION
 
